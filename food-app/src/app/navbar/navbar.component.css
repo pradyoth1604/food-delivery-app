@@ -2,6 +2,12 @@ a{
   cursor: pointer;
 }
 
+.welcome-msg {
+  position: absolute;
+  left: 80px;
+}
+
+
 .close {
  margin-top: 0px;
  margin-right: 10px;
@@ -292,6 +298,12 @@ li .cart-count {
    position: relative;
  }
 
+ .welcome-msg {
+  position: absolute;
+  left: 80px;
+}
+
+
  .navbar .navbar-brand img {
    width: 100% !important;
  }
@@ -343,6 +355,7 @@ li .cart-count {
    color: #f0002f;
    /*text-align: center;*/
  }
+
 
  .icons > li > a > i > span {
    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,

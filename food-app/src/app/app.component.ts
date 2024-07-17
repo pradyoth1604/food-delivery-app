@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { AuthService } from './services/auth.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AuthService } from './services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, DoCheck {
   title = 'food-app';
   isLoggedIn = false;
   isAdmin = false;
@@ -15,14 +15,14 @@ export class AppComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.isLoggedIn = this.authService.isLoggedIn();
-    if (this.isLoggedIn) {
-      this.isAdmin = this.authService.getUserRole() === 'admin';
-      this.role = this.authService.getUserRole();
-    }
+    this.updateUserState();
   }
 
   ngDoCheck(): void {
+    this.updateUserState();
+  }
+
+  updateUserState(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
     if (this.isLoggedIn) {
       this.isAdmin = this.authService.getUserRole() === 'admin';

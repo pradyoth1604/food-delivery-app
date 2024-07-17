@@ -20,11 +20,11 @@
   </div>
   <div *ngIf="filteredItems.length === 0" class="no-items">
     <img
-      src="assets/placeholder-image.png"
+      src="https://th.bing.com/th/id/R.c0c639eef59c29f3afa4ddd8e74f6da8?rik=7pLdn%2bIQb0T0RA&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fcat-face-transparent%2fcat-face-transparent-16.png&ehk=INDtnBfx6VlUq8tDhuBnh9BDxba03AdC%2fMyI42uPxwA%3d&risl=&pid=ImgRaw&r=0"
       alt="No items"
       class="placeholder-image"
     />
-    <p>No menu items available.</p>
+    <p>No items available :(</p>
   </div>
   <div class="menu-grid" *ngIf="filteredItems.length > 0">
     <div class="menu-card" *ngFor="let item of filteredItems">

@@ -132,6 +132,10 @@
         font-weight: 700;
     }
 
+    .sub-text{
+      color: aqua;
+    }
+
     .carousel-caption p{
         font-size: 1.2rem;
         padding: 0px 20px 0 20px;

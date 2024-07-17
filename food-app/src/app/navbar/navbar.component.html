@@ -1,4 +1,3 @@
-<!-- src/app/navbar/navbar.component.html -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a href="/">
@@ -10,7 +9,10 @@
       />
     </a>
     <span class="nav-item" style="display: flex; align-items: center">
-      <span class="nav-link" style="margin-left: auto; margin-right: auto">
+      <span
+        class="nav-link welcome-msg"
+        style="margin-left: auto; margin-right: auto"
+      >
         Welcome, {{ role === "admin" ? "Admin" : "User" }}!
       </span>
     </span>
@@ -34,23 +36,8 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/restaurants">Restaurants</a>
         </li>
-        <li class="nav-item dropdown" *ngIf="!isAdmin">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdownCart"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            🛒 Cart
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownCart">
-            <li><a class="dropdown-item" routerLink="/cart">View Cart</a></li>
-            <li>
-              <a class="dropdown-item" routerLink="/checkout">Checkout</a>
-            </li>
-          </ul>
+        <li class="nav-item" *ngIf="!isAdmin">
+          <a class="nav-link" routerLink="/cart">🛒 Cart</a>
         </li>
         <li class="nav-item dropdown" *ngIf="!isAdmin">
           <a
@@ -74,15 +61,13 @@
                 >My Orders</a
               >
             </li>
-            <li>
-              <a class="dropdown-item" routerLink="/customer/login">Log In</a>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="/customer/register"
-                >Register</a
-              >
-            </li>
           </ul>
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link" routerLink="/signup">Signup</a>
         </li>
         <li class="nav-item" *ngIf="isLoggedIn">
           <a class="nav-link" (click)="logout()">Logout</a>

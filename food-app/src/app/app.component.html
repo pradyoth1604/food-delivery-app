@@ -5,8 +5,8 @@
 </div>
 
 <nav *ngIf="!isLoggedIn">
-  <a routerLink="/login" *ngIf="!isLoggedIn">Login</a>
-  <a routerLink="/signup" *ngIf="!isLoggedIn">Signup</a>
+  <app-navbar></app-navbar>
+  <app-header></app-header>
   <a routerLink="/admin" *ngIf="isLoggedIn && isAdmin">Admin Dashboard</a>
   <a routerLink="/user" *ngIf="isLoggedIn && !isAdmin">User Dashboard</a>
   <a (click)="logout()" *ngIf="isLoggedIn">Logout</a>
