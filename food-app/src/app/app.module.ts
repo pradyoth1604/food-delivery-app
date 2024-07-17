@@ -16,6 +16,7 @@ import { UserComponent } from './components/user/user.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { RestaurantComponent } from './restaurant/restaurant.component'; // Ensure SignupComponent is imported
 import { RestaurantService } from './restaurant.service';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RestaurantService } from './restaurant.service';
     AdminComponent,
     UserComponent,
     SignupComponent,
-    RestaurantComponent
+    RestaurantComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

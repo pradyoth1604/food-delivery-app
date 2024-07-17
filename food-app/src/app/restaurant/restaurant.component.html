@@ -1,3 +1,4 @@
+<!-- src/app/restaurant/restaurant.component.html -->
 <div class="restaurant-container">
   <div class="col-sm-12 res-headings">
     <h2>Choose your taste</h2>
@@ -11,7 +12,6 @@
       (input)="search()"
     />
     <button class="btn btn-primary" (click)="search()">Search</button>
-    <!-- <button class="btn btn-secondary" (click)="clearSearch()">Clear</button> -->
   </div>
   <div class="restaurant-grid">
     <div class="restaurant-card" *ngFor="let restaurant of filteredRestaurants">
@@ -34,6 +34,9 @@
             restaurant.info.totalRatingsString
           }})
         </p>
+        <a [routerLink]="['/menu', restaurant.info.id]" class="btn btn-primary"
+          >View Menu</a
+        >
       </div>
     </div>
   </div>
