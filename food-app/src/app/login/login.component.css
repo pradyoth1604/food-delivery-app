@@ -9,7 +9,7 @@ body {
   margin: 50px auto; /* Center the login container */
   padding: 30px;
   border-radius: 8px;
-  background: #ffffff; /* White background for the login container */
+  background: #d8cccc; /* White background for the login container */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease-in-out; /* Smooth transition for 3D effect */

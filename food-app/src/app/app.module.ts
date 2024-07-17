@@ -1,4 +1,3 @@
-// src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForbiddenComponent } from './components/forbidden/forbidden.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { UserComponent } from './components/user/user.component';
-import { SignupComponent } from './components/signup/signup.component'; // Ensure SignupComponent is imported
+import { SignupComponent } from './components/signup/signup.component';
+import { RestaurantComponent } from './restaurant/restaurant.component'; // Ensure SignupComponent is imported
+import { RestaurantService } from './restaurant.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SignupComponent } from './components/signup/signup.component'; // Ensur
     ForbiddenComponent,
     AdminComponent,
     UserComponent,
-    SignupComponent // Ensure SignupComponent is declared
+    SignupComponent,
+    RestaurantComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,7 @@ import { SignupComponent } from './components/signup/signup.component'; // Ensur
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RestaurantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

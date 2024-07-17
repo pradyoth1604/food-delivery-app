@@ -1,0 +1,40 @@
+<div class="restaurant-container">
+  <div class="col-sm-12 res-headings">
+    <h2>Choose your taste</h2>
+    <h1>Restaurants</h1>
+  </div>
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Search Restaurants"
+      (input)="search()"
+    />
+    <button class="btn btn-primary" (click)="search()">Search</button>
+    <!-- <button class="btn btn-secondary" (click)="clearSearch()">Clear</button> -->
+  </div>
+  <div class="restaurant-grid">
+    <div class="restaurant-card" *ngFor="let restaurant of filteredRestaurants">
+      <img
+        [src]="IMG_CDN_URL + restaurant.info.cloudinaryImageId"
+        alt="{{ restaurant.info.name }}"
+        class="restaurant-image"
+      />
+      <div class="restaurant-info">
+        <h2 class="restaurant-name">{{ restaurant.info.name }}</h2>
+        <p class="restaurant-locality">
+          📍 {{ restaurant.info.locality }}, {{ restaurant.info.areaName }}
+        </p>
+        <p class="restaurant-cuisines">
+          😋{{ restaurant.info.cuisines.join(", ") }}
+        </p>
+        <p class="restaurant-cost">{{ restaurant.info.costForTwo }}</p>
+        <p class="restaurant-rating">
+          Rating: {{ restaurant.info.avgRatingString }} ⭐ ({{
+            restaurant.info.totalRatingsString
+          }})
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
