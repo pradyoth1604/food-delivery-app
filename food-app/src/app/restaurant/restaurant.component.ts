@@ -1,3 +1,4 @@
+// src/app/restaurant/restaurant.component.ts
 import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from '../restaurant.service';
 
@@ -15,8 +16,10 @@ export class RestaurantComponent implements OnInit {
   constructor(private restaurantService: RestaurantService) {}
 
   ngOnInit(): void {
-    this.restaurants = this.restaurantService.getRestaurants();
-    this.filteredRestaurants = [...this.restaurants];
+    this.restaurantService.getRestaurants().subscribe(data => {
+      this.restaurants = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+      this.filteredRestaurants = [...this.restaurants];
+    });
   }
 
   search() {
