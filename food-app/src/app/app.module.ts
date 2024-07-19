@@ -17,6 +17,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { RestaurantComponent } from './restaurant/restaurant.component'; // Ensure SignupComponent is imported
 import { RestaurantService } from './restaurant.service';
 import { MenuComponent } from './menu/menu.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { MenuComponent } from './menu/menu.component';
     UserComponent,
     SignupComponent,
     RestaurantComponent,
-    MenuComponent
+    MenuComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,
