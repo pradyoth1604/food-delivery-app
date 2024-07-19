@@ -1,4 +1,3 @@
-// src/app/login/login.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
@@ -13,6 +12,7 @@ export class LoginComponent {
   password: string = '';
   isLoggedIn: boolean = false;
   role: string = '';
+  flagToShowBanner = true;
 
   constructor(private authService: AuthService, private router: Router) {
     this.isLoggedIn = this.authService.isLoggedIn();
@@ -20,10 +20,13 @@ export class LoginComponent {
   }
 
   login(): void {
+    this.flagToShowBanner = true;
+    console.log(this.flagToShowBanner)
     this.authService.login(this.username, this.password).subscribe(success => {
       if (success) {
         this.isLoggedIn = true;
         this.role = this.authService.getUserRole();
+        this.authService.flagToShowBanner = false; //==> // Hide banner on login
         if (this.role === 'admin') {
           this.router.navigate(['/admin']);
         } else {

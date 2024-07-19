@@ -9,6 +9,7 @@ import { mockUsers } from '../mock-users'; // Import the mock users
 })
 export class AuthService {
   private currentUser: any = null;
+  flagToShowBanner = true;
 
   constructor() { }
 

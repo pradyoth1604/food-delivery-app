@@ -1,5 +1,4 @@
-// src/app/navbar/navbar.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -7,10 +6,11 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, DoCheck {
   isLoggedIn = false;
   isAdmin = false;
   role: string = '';
+  flagToShowBanner = true;
 
   constructor(private authService: AuthService) {}
 
@@ -30,9 +30,25 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+
+  home(): void {
+    this.flagToShowBanner = true;
+    console.log(this.flagToShowBanner);
+  }
+  restaurant(): void {
+    this.flagToShowBanner = true;
+    console.log(this.flagToShowBanner);
+  }
+
+  login(){
+    this.flagToShowBanner=false;
+    console.log(this.flagToShowBanner)
+  }
+
   logout(): void {
     this.authService.logout();
     this.isLoggedIn = false;
     this.isAdmin = false;
+    console.log(this.flagToShowBanner);
   }
 }

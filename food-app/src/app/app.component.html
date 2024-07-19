@@ -6,7 +6,13 @@
 
 <nav *ngIf="!isLoggedIn">
   <app-navbar></app-navbar>
-  <app-header></app-header>
+  <div *ngIf="!flagToShowBanner">
+    <app-header></app-header>
+  </div>
+  <!-- <app-login></app-login> -->
+  <!-- <div **ngIf="flagToShowBanner">
+    <app-header></app-header>
+  </div> -->
   <a routerLink="/admin" *ngIf="isLoggedIn && isAdmin">Admin Dashboard</a>
   <a routerLink="/user" *ngIf="isLoggedIn && !isAdmin">User Dashboard</a>
   <a (click)="logout()" *ngIf="isLoggedIn">Logout</a>

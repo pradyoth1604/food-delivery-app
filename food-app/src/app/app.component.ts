@@ -11,6 +11,7 @@ export class AppComponent implements OnInit, DoCheck {
   isLoggedIn = false;
   isAdmin = false;
   role: string = '';
+  flagToShowBanner = true;  //==> // New flag added
 
   constructor(private authService: AuthService) {}
 
@@ -27,6 +28,9 @@ export class AppComponent implements OnInit, DoCheck {
     if (this.isLoggedIn) {
       this.isAdmin = this.authService.getUserRole() === 'admin';
       this.role = this.authService.getUserRole();
+      this.flagToShowBanner = false;  //==> // Set flag based on login state
+    } else {
+      this.flagToShowBanner = true;  //==> // Set flag based on logout state
     }
   }
 
@@ -34,5 +38,7 @@ export class AppComponent implements OnInit, DoCheck {
     this.authService.logout();
     this.isLoggedIn = false;
     this.isAdmin = false;
+    this.flagToShowBanner = true; //==> // Set flag to true on logout
+    console.log(this.flagToShowBanner);
   }
 }
