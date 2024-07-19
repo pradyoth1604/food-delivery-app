@@ -1,4 +1,3 @@
-// src/app/services/auth.service.ts
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
@@ -14,7 +13,6 @@ export class AuthService {
   constructor() { }
 
   login(username: string, password: string): Observable<boolean> {
-    // Simulate an API call with the mock users
     return of(mockUsers).pipe(
       map(users => {
         const user = users.find(u => u.username === username && u.password === password);
