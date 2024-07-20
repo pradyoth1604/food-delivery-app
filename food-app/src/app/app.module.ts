@@ -1,3 +1,4 @@
+// src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -11,14 +12,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForbiddenComponent } from './components/forbidden/forbidden.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { AdminNavbarComponent } from '../app/admin-navbar/admin-navbar.component';
 import { UserComponent } from './components/user/user.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { RestaurantComponent } from './restaurant/restaurant.component'; // Ensure SignupComponent is imported
-import { RestaurantService } from './restaurant.service';
+import { RestaurantComponent } from './restaurant/restaurant.component';
 import { MenuComponent } from './menu/menu.component';
-import { OrderHistoryComponent } from './order-history/order-history.component';
-
+import { AdminRestaurantComponent } from './admin-restaurant/admin-restaurant.component';
+import { RestaurantService } from '../app/restaurant.service';
+import { AdminRestaurantService } from './services/admin-restaurant.service';
+import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,13 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     NavbarComponent,
     LoginComponent,
     ForbiddenComponent,
-    AdminComponent,
+    AdminNavbarComponent,
     UserComponent,
     SignupComponent,
     RestaurantComponent,
     MenuComponent,
-    OrderHistoryComponent
+    AdminRestaurantComponent,
+    AdminMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [RestaurantService],
+  providers: [RestaurantService, AdminRestaurantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

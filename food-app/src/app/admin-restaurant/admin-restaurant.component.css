@@ -1,0 +1,95 @@
+/* src/app/components/admin-restaurant/admin-restaurant.component.css */
+.admin-restaurant-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.add-restaurant-form {
+  margin-bottom: 20px;
+}
+
+.add-restaurant-form input {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.add-restaurant-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #cf0810;
+  color: #fff;
+  cursor: pointer;
+}
+
+.restaurant-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.restaurant-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px;
+  width: 250px;
+  text-align: center;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.restaurant-info {
+  padding: 20px;
+}
+
+.restaurant-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.restaurant-locality,
+.restaurant-cuisines,
+.restaurant-cost,
+.restaurant-rating {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin: 5px 0;
+}
+
+.restaurant-locality {
+  font-weight: 500;
+}
+
+.restaurant-cuisines {
+  font-style: italic;
+}
+
+.restaurant-cost {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.restaurant-rating {
+  font-weight: 600;
+  color: #f39c12;
+}

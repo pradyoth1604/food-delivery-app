@@ -6,19 +6,19 @@ import { SignupComponent } from './components/signup/signup.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { MenuComponent } from './menu/menu.component';
 import { AuthGuard } from './guards/auth.guard';
-import { OrderHistoryComponent } from './order-history/order-history.component';
+import { AdminRestaurantComponent } from './admin-restaurant/admin-restaurant.component';
+import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'restaurants', component: RestaurantComponent },
-  { path: 'menu/:id', component: MenuComponent }, // New route for menu component
+  { path: 'menu/:id', component: MenuComponent },
+  { path: 'admin/restaurants', component: AdminRestaurantComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } },
+  { path: 'admin/menu', component: AdminMenuComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } },
   { path: '', redirectTo: '/restaurants', pathMatch: 'full' },
   { path: '**', redirectTo: '/restaurants' },
-  { path: 'order-history', component: OrderHistoryComponent },
-  // { path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard], data: { expectedRole: 'user' } }, // Protect with AuthGuard
-  // { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } }, // Admin route
 ];
 
 @NgModule({

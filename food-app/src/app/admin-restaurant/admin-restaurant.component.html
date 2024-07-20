@@ -1,0 +1,56 @@
+<!-- src/app/components/admin-restaurant/admin-restaurant.component.html -->
+<div class="admin-restaurant-container">
+  <h2>Admin Restaurant Management</h2>
+
+  <div class="add-restaurant-form">
+    <h3>Add Restaurant</h3>
+    <input [(ngModel)]="newRestaurant.id" placeholder="ID" />
+    <input [(ngModel)]="newRestaurant.name" placeholder="Name" />
+    <input [(ngModel)]="newRestaurant.locality" placeholder="Locality" />
+    <input [(ngModel)]="newRestaurant.areaName" placeholder="Area Name" />
+    <input
+      [(ngModel)]="newRestaurant.cuisines"
+      placeholder="Cuisines (comma separated)"
+    />
+    <input [(ngModel)]="newRestaurant.costForTwo" placeholder="Cost For Two" />
+    <input
+      [(ngModel)]="newRestaurant.avgRatingString"
+      placeholder="Average Rating"
+    />
+    <input
+      [(ngModel)]="newRestaurant.totalRatingsString"
+      placeholder="Total Ratings"
+    />
+    <input
+      [(ngModel)]="newRestaurant.cloudinaryImageId"
+      placeholder="Image ID"
+    />
+    <button (click)="addRestaurant()">Add Restaurant</button>
+  </div>
+
+  <div class="restaurant-grid">
+    <div class="restaurant-card" *ngFor="let restaurant of restaurants">
+      <!-- <img
+        <!--
+        [src]="
+          <!-- https:  //media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/ + restaurant.cloudinaryImageId -->
+      " -- /> alt="{{ restaurant.name }}" class="restaurant-image" /> -->
+      <div class="restaurant-info">
+        <h2 class="restaurant-name">{{ restaurant.name }}</h2>
+        <p class="restaurant-locality">
+          📍 {{ restaurant.locality }}, {{ restaurant.areaName }}
+        </p>
+        <p class="restaurant-cuisines">
+          😋{{ restaurant.cuisines.join(", ") }}
+        </p>
+        <p class="restaurant-cost">{{ restaurant.costForTwo }}</p>
+        <p class="restaurant-rating">
+          Rating: {{ restaurant.avgRatingString }} ⭐ ({{
+            restaurant.totalRatingsString
+          }})
+        </p>
+        <button (click)="deleteRestaurant(restaurant.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="menu-container">
+  <h2>Manage Menus</h2>
+  <form (ngSubmit)="editMode ? updateMenu() : addMenu()">
+    <input
+      type="text"
+      [(ngModel)]="newMenu.name"
+      name="name"
+      placeholder="Menu Name"
+      required
+    />
+    <input
+      type="text"
+      [(ngModel)]="newMenu.description"
+      name="description"
+      placeholder="Description"
+      required
+    />
+    <input
+      type="number"
+      [(ngModel)]="newMenu.price"
+      name="price"
+      placeholder="Price"
+      required
+    />
+    <input
+      type="text"
+      [(ngModel)]="newMenu.image"
+      name="image"
+      placeholder="Image URL"
+    />
+    <button type="submit" class="btn btn-primary">
+      {{ editMode ? "Update Menu" : "Add Menu" }}
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="clearForm()">
+      Clear
+    </button>
+  </form>
+  <div class="menu-list">
+    <div class="menu-card" *ngFor="let menu of menus">
+      <h3>{{ menu.name }}</h3>
+      <p>{{ menu.description }}</p>
+      <p>{{ menu.price }}</p>
+      <img [src]="menu.image" alt="{{ menu.name }}" />
+      <button class="btn btn-primary" (click)="editMenu(menu)">Edit</button>
+      <button class="btn btn-danger" (click)="deleteMenu(menu.id)">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>

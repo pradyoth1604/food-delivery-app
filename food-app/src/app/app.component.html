@@ -1,21 +1,22 @@
-<!-- src/app/app.component.html -->
-<div *ngIf="isLoggedIn && !isAdmin">
-  <app-navbar></app-navbar>
-  <app-header></app-header>
+<div *ngIf="isLoggedIn">
+  <!-- Admin Navbar and Dashboard -->
+  <div *ngIf="isAdmin">
+    <app-admin-navbar></app-admin-navbar>
+  </div>
+
+  <!-- User Navbar and Dashboard -->
+  <div *ngIf="!isAdmin">
+    <app-navbar></app-navbar>
+    <app-header></app-header>
+  </div>
 </div>
 
-<nav *ngIf="!isLoggedIn">
+<!-- Default Navbar when not logged in -->
+<div *ngIf="!isLoggedIn">
   <app-navbar></app-navbar>
   <div *ngIf="!flagToShowBanner">
     <app-header></app-header>
   </div>
-  <!-- <app-login></app-login> -->
-  <!-- <div **ngIf="flagToShowBanner">
-    <app-header></app-header>
-  </div> -->
-  <a routerLink="/admin" *ngIf="isLoggedIn && isAdmin">Admin Dashboard</a>
-  <a routerLink="/user" *ngIf="isLoggedIn && !isAdmin">User Dashboard</a>
-  <a (click)="logout()" *ngIf="isLoggedIn">Logout</a>
-</nav>
+</div>
 
 <router-outlet></router-outlet>

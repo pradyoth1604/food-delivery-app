@@ -1,5 +1,55 @@
-<!-- src/app/components/admin/admin.component.html -->
-<div>
-  <h2>Admin Dashboard</h2>
-  <p>Welcome, Admin!</p>
-</div>
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a href="/admin">
+      <img
+        src="https://img15.deviantart.net/47dd/i/2012/247/2/4/chibi_luffy_by_taiyohisakawa-d5dj7pu.png"
+        alt="Logo"
+        height="50px"
+        width="50px"
+      />
+    </a>
+    <span class="nav-item" style="display: flex; align-items: center">
+      <span
+        class="nav-link welcome-msg"
+        style="margin-left: auto; margin-right: auto"
+      >
+        Welcome, {{ role === "admin" ? "Admin" : "User" }}!
+      </span>
+    </span>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" (click)="home()" routerLink="/admin">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="manageUsers()" routerLink="/admin/users"
+            >Manage Users</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            (click)="manageOrders()"
+            routerLink="/admin/orders"
+            >Manage Orders</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->

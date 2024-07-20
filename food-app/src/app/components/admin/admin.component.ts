@@ -1,15 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+// import { Component, OnInit, DoCheck } from '@angular/core';
+// import { AuthService } from '../../services/auth.service';
 
-@Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
-})
-export class AdminComponent implements OnInit {
+// @Component({
+//   selector: 'app-admin-navbar',
+//   templateUrl: './admin-navbar.component.html',
+//   styleUrls: ['./admin-navbar.component.css']
+// })
+// export class AdminNavbarComponent implements OnInit, DoCheck {
+//   isLoggedIn = false;
+//   isAdmin = false;
+//   role: string = '';
 
-  constructor() { }
+//   constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-  }
+//   ngOnInit(): void {
+//     this.isLoggedIn = this.authService.isLoggedIn();
+//     if (this.isLoggedIn) {
+//       this.isAdmin = this.authService.getUserRole() === 'admin';
+//       this.role = this.authService.getUserRole();
+//     }
+//   }
 
-}
+//   ngDoCheck(): void {
+//     this.isLoggedIn = this.authService.isLoggedIn();
+//     if (this.isLoggedIn) {
+//       this.isAdmin = this.authService.getUserRole() === 'admin';
+//       this.role = this.authService.getUserRole();
+//     }
+//   }
+
+//   home(): void {
+//     console.log("Navigating to home");
+//   }
+
+//   manageUsers(): void {
+//     console.log("Navigating to manage users");
+//   }
+
+//   manageOrders(): void {
+//     console.log("Navigating to manage orders");
+//   }
+
+//   logout(): void {
+//     this.authService.logout();
+//     this.isLoggedIn = false;
+//     this.isAdmin = false;
+//     console.log("Logged out");
+//   }
+// }
